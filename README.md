@@ -9,7 +9,7 @@ This project is implemented using Python 3.6, PyTorch, NumPy and the UnityEnviro
 Download the repository with
 
 ```
-git clone https://github.com/lbarazza/Reacher
+git clone https://github.com/lbarazza/Tennis
 ```
 
 To install the environment, download the version corresponding to your operating system:
