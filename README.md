@@ -1,6 +1,8 @@
 # Tennis
 DDPG for solving a multi-agent environment
 
+## Project Details
+This project solves the environment provided in the Udacity Reinforcement Learning Nanodegree Program. The system consists of two AI agents that need to learn to pass the tennis ball to each other without dropping it. If an agent hits the ball over the net, it receives a reward of +0.1, if it drops it, it receives a reward of -0.01. Each agent receives an observation of consisting of 24 differen variables. The possible actions for each agent are to go towards/away from the net and jumping (both continous). By having two agents, two different scores are available, the score that is considered to represent the episode is the highest one of the two. The environemnt is considered solved when the average reward over the last 100 episodes reaches 0.5.
 
 ## Dependencies
 This project is implemented using Python 3.6, PyTorch, NumPy and the UnityEnvironment package. For the plotting part of the project Matplotlib is used, while for the part dealing with csv, Pandas is used.
