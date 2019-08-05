@@ -1,10 +1,15 @@
 # Report
 
+## Algorithm
+This project uses the DDPG algorithm starting off from the previous implementation in the [Reacher](https://github.com/lbarazza/Reacher) project and making some slight modifications. In fact, the only difference is the instatiation of two different agents instead of just one. To check out how the DDPG algorithm works in detail check the [report](https://github.com/lbarazza/Reacher/blob/master/REPORT.md) of the Reacher project.
+
+To show how general the DDPG algorithm is, the same network structure and hyperparamters as the ones in the Reacher project have been used.
+
 ## Networks
-Two separate networks for actor and critic networks have been used. Both networks have two hidden layers with 100 neurons each and ReLU activation. The actor network has a tanh activation function applied to the output. Instead, the critic network doesn't have any.
+Two separate networks for actor and critic networks have been used. Both networks have two hidden layers with 100 neurons each and ReLU activation. The actor network has a tanh activation function applied to the output. Instead, the critic network doesn't have any. These are the same networks as the ones used in the Reacher project, the only difference is that each agent has its own version of each one of these.
 
 ## Hyperparameters
-An informal search over the hyperparameters has been conducted with the following results:
+These are the same networks as the ones used in the Reacher project.
 
 |     Hyperparamter                          |      Value                      |
 |--------------------------------------------|:-------------------------------:|
@@ -25,16 +30,12 @@ An informal search over the hyperparameters has been conducted with the followin
 * the standard deviation has been decreased linearly in the amount of frames specified
 
 ## Results
-The agent was able to solve the environment with a best of 100 episodes:
-![alt text](https://raw.githubusercontent.com/lbarazza/Reacher/master/images/stats.png "DDPG stats")
+The agent was able to solve the environment in 2249 episodes:
+![alt text](https://raw.githubusercontent.com/lbarazza/Tennis/master/images/sample_test03_stats.png "DDPG stats")
 (the average reward is in dark blue, while the actual single rewards are plotted in light blue)
-
-However, it usually solves the environment in around 300 episodes:
-![alt text](https://raw.githubusercontent.com/lbarazza/Reacher/master/images/stats2.png "DDPG stats2")
-
 
 ## Improvements
 The agent could be improved to:
+- implement MADDPG which makes the environment more stationary by training the critic by showing it all the actions taken by all the other agents
 - use Ornstein Uhlenbeck noise instead of normal gaussian noise with zero mean
-- be moved to a distributed version of DDPG such as D4PG (of course by adding more agents)
 - make use of Prioritized Experience Replay
